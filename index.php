@@ -1,10 +1,14 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["id"])) {
     header("Location: login.html");
     exit;
 }
+
+include("conexao.php");
+
+$sql = "SELECT * FROM produtos";
+$resultado = mysqli_query($conexao, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -61,29 +65,19 @@ if (!isset($_SESSION["id"])) {
 
             <div class="grid-produtos">
 
-                <div class="produto">
-                    <img src="img/buquerosa.png" alt="Buquê de Rosas">
-                    <h3>Buquê de Rosas</h3>
-                    <p>20 unidades disponíveis</p>
-                    <span>R$ 89,90</span>
-                    <button>Comprar</button>
-                </div>
+                <?php while ($produto = mysqli_fetch_assoc($resultado)) { ?>
+                    <div class="produto">
+                        <img src="uploads/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+                        <h3><?php echo $produto['nome']; ?></h3>
+                        <p><?php echo $produto['descricao']; ?></p>
+                        <span>
+                            R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
+                        </span>
+                        <button>Comprar</button>
 
-                <div class="produto">
-                    <img src="img/buquegirassol.png" alt="Buquê de Girassóis">
-                    <h3>Buquê Girassóis</h3>
-                    <p>15 unidades disponíveis</p>
-                    <span>R$ 69,90</span>
-                    <button>Comprar</button>
-                </div>
+                    </div>
 
-                <div class="produto">
-                    <img src="img/buqueilirio.png" alt="Buquê de Lírios">
-                    <h3>Buquê Lírio</h3>
-                    <p>8 unidades disponíveis</p>
-                    <span>R$ 119,90</span>
-                    <button>Comprar</button>
-                </div>
+                <?php } ?>
 
             </div>
         </section>

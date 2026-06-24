@@ -23,59 +23,64 @@ $resultado = mysqli_query($conexao, $sql);
 
 <body>
 
-<div class="admin-container">
+    <div class="admin-container">
 
-    <h1 class="admin-title">Área Administrativa</h1>
+        <h1 class="admin-title">Área Administrativa</h1>
 
-    <h2>Cadastrar Produto</h2>
+        <a href="logout.php" class="btn-sair-admin">Sair</a>
 
-    <form class="admin-form" action="salvar_produto.php" method="POST" enctype="multipart/form-data">
+        <h2>Cadastrar Produto</h2>
 
-        <input type="text" name="nome" placeholder="Nome do produto" required>
+        <form class="admin-form" action="salvar_produto.php" method="POST" enctype="multipart/form-data">
 
-        <input type="text" name="descricao" placeholder="Descrição" required>
+            <input type="text" name="nome" placeholder="Nome do produto" required>
 
-        <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+            <input type="text" name="descricao" placeholder="Descrição" required>
 
-        <input type="file" name="imagem" accept="image/*" required>
+            <input type="number" step="0.01" name="preco" placeholder="Preço" required>
 
-        <button type="submit">Salvar Produto</button>
+            <input type="number" name="quantidade" placeholder="Quantidade em estoque" min="0" required>
 
-    </form>
+            <input type="file" name="imagem" accept="image/*" required>
 
-    <h2>Produtos Cadastrados</h2>
+            <button type="submit">Salvar Produto</button>
 
-    <div class="admin-lista">
+        </form>
 
-        <?php while ($produto = mysqli_fetch_assoc($resultado)) { ?>
+        <h2>Produtos Cadastrados</h2>
 
-            <div class="admin-card">
+        <div class="admin-lista">
 
-                <p><strong><?php echo $produto['nome']; ?></strong></p>
-                <p><?php echo $produto['descricao']; ?></p>
-                <p>R$ <?php echo $produto['preco']; ?></p>
+            <?php while ($produto = mysqli_fetch_assoc($resultado)) { ?>
 
-                <img src="uploads/<?php echo $produto['imagem']; ?>" width="80">
+                <div class="admin-card">
 
-                <div class="admin-actions">
+                    <p><strong><?php echo $produto['nome']; ?></strong></p>
+                    <p><?php echo $produto['descricao']; ?></p>
+                    <p>R$ <?php echo $produto['preco']; ?></p>
+                    <p>Estoque: <?php echo $produto['quantidade']; ?></p>
 
-                    <a class="btn-excluir" href="excluir_produto.php?id=<?php echo $produto['id']; ?>">
-                        Excluir
-                    </a>
+                    <img src="uploads/<?php echo $produto['imagem']; ?>" width="80">
 
-                    <a class="btn-editar" href="editar_produto.php?id=<?php echo $produto['id']; ?>">
-                        Editar
-                    </a>
+                    <div class="admin-actions">
+
+                        <a class="btn-excluir" href="excluir_produto.php?id=<?php echo $produto['id']; ?>">
+                            Excluir
+                        </a>
+
+                        <a class="btn-editar" href="editar_produto.php?id=<?php echo $produto['id']; ?>">
+                            Editar
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
+            <?php } ?>
 
-        <?php } ?>
+        </div>
 
     </div>
-
-</div>
 
 </body>
 

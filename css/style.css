@@ -448,3 +448,20 @@ nav a[href="logout.php"]:hover {
     gap: 10px;
     margin-top: 10px;
 }
+
+.btn-sair-admin{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #e91e63;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-sair-admin:hover{
+    background: white;
+    color: #e91e63;
+    border: 1px solid #e91e63;
+}
