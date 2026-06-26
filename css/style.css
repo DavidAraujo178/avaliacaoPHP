@@ -1,12 +1,8 @@
-/* RESET */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* GERAL */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -17,8 +13,6 @@ body {
 a {
   text-decoration: none;
 }
-
-/* HEADER */
 
 header {
   background-color: #ffffff;
@@ -129,8 +123,6 @@ html {
   transform: translateY(-5px);
 }
 
-/* PRODUTOS */
-
 .produtos {
   padding: 70px 8%;
 }
@@ -200,8 +192,6 @@ html {
   background-color: #c2185b;
 }
 
-/* FOOTER */
-
 footer {
   background-color: #222;
   color: white;
@@ -209,8 +199,6 @@ footer {
   padding: 25px;
   margin-top: 50px;
 }
-
-/* RESPONSIVIDADE */
 
 @media(max-width:768px) {
 
@@ -331,8 +319,6 @@ nav a[href="logout.php"]:hover {
   border: 1px solid #e91e63;
 }
 
-/* ADMIN */
-
 .admin-container {
   max-width: 900px;
   margin: 40px auto;
@@ -344,8 +330,6 @@ nav a[href="logout.php"]:hover {
   color: #e91e63;
   margin-bottom: 30px;
 }
-
-/* FORM */
 
 .admin-form {
   display: flex;
@@ -380,16 +364,11 @@ nav a[href="logout.php"]:hover {
   color: #e91e63;
   border: 1px solid #e91e63;
 }
-
-/* LISTA */
-
 .admin-lista {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
-/* CARD PRODUTO */
 
 .admin-card {
   background: white;
@@ -407,8 +386,6 @@ nav a[href="logout.php"]:hover {
   margin: 5px 0;
 }
 
-/* BOTÃO EXCLUIR */
-
 .btn-excluir {
   display: inline-block;
   margin-top: 10px;
@@ -425,43 +402,44 @@ nav a[href="logout.php"]:hover {
   background: darkred;
 }
 
-.btn-editar{
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #2196f3;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+.btn-editar {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #2196f3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.btn-editar:hover{
-    background: white;
-    color: #2196f3;
-    border: 1px solid #2196f3;
+.btn-editar:hover {
+  background: white;
+  color: #2196f3;
+  border: 1px solid #2196f3;
 }
 
-.admin-actions{
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.btn-sair-admin{
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #e91e63;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
+.btn-sair-admin {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #e91e63;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.btn-sair-admin:hover{
-    background: white;
-    color: #e91e63;
-    border: 1px solid #e91e63;
+.btn-sair-admin:hover {
+  background: white;
+  color: #e91e63;
+  border: 1px solid #e91e63;
 }
+

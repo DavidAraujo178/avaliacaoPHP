@@ -5,7 +5,7 @@ $id = $_POST['id'];
 $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $preco = $_POST['preco'];
-$quantidade = $_POST["quantidade"];
+$quantidade = $_POST['quantidade'];
 
 $sql = "UPDATE produtos 
         SET nome='$nome',

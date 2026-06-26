@@ -81,7 +81,11 @@ $resultado = mysqli_query($conexao, $sql);
         </div>
 
     </div>
-
+    <footer>
+        <p><b>Estudantes:David de Araújo Santos e Flora Aguiar</b></p>
+        <p>Turma: <b> INF261</b></p>
+        <p>&copy; 2026 Floras - Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>

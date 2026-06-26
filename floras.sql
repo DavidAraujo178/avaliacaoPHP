@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Tempo de geração: 23/06/2026 às 14:49
+-- Tempo de geração: 26/06/2026 às 15:19
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,8 +45,18 @@ CREATE TABLE `produtos` (
   `nome` varchar(100) DEFAULT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `preco` decimal(10,2) DEFAULT NULL,
-  `imagem` varchar(255) DEFAULT NULL
+  `imagem` varchar(255) DEFAULT NULL,
+  `quantidade` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `imagem`, `quantidade`) VALUES
+(11, 'Buque de Lírios', 'Buque de Lírios', 319.90, 'buqueilirio.png', 30),
+(12, 'Buque de Girassóis ', 'Buque de Girassóis ', 299.90, 'buquegirassol.png', 0),
+(13, 'Buque de Rosas Vermelhas', 'Buque de Rosas Vermelhas', 189.90, 'buquerosa.png', 35);
 
 -- --------------------------------------------------------
 
@@ -67,8 +77,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
-(1, 'Admin', 'admin@floras.com', '123', 'administrador'),
-(2, 'Usuario', 'user@floras.com', '123', 'usuario');
+(1, 'admin', 'admin@floras.com', '123', 'administrador'),
+(2, 'user', 'user@floras.com', '123', 'usuario'),
+(7, 'David', 'david@floras.com', '123', 'usuario');
 
 --
 -- Índices para tabelas despejadas
@@ -107,13 +118,13 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -33,7 +33,6 @@ $resultado = mysqli_query($conexao, $sql);
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#categorias">Categorias</a></li>
-                <li><a href="#contato">Contato</a></li>
                 <li class="sair"><a href="logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -67,16 +66,32 @@ $resultado = mysqli_query($conexao, $sql);
 
                 <?php while ($produto = mysqli_fetch_assoc($resultado)) { ?>
                     <div class="produto">
+
                         <img src="uploads/<?php echo $produto['imagem']; ?>" alt="<?php echo $produto['nome']; ?>">
+
                         <h3><?php echo $produto['nome']; ?></h3>
+
                         <p><?php echo $produto['descricao']; ?></p>
+
+                        <p>
+                            Quantidade disponível:
+                            <?php echo $produto['quantidade']; ?>
+                        </p>
+
                         <span>
                             R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
                         </span>
-                        <button>Comprar</button>
+
+                        <?php if ($produto['quantidade'] > 0) { ?>
+                            <form action="comprar.php" method="GET">
+                                <input type="hidden" name="id" value="<?php echo $produto['id']; ?>">
+                                <button type="submit">Comprar</button>
+                            </form>
+                        <?php } else { ?>
+                            <button disabled>Esgotado</button>
+                        <?php } ?>
 
                     </div>
-
                 <?php } ?>
 
             </div>
@@ -85,6 +100,8 @@ $resultado = mysqli_query($conexao, $sql);
     </main>
 
     <footer>
+        <p><b>Estudantes:David de Araújo Santos e Flora Aguiar</b></p>
+        <p>Turma: <b> INF261</b></p>
         <p>&copy; 2026 Floras - Todos os direitos reservados.</p>
     </footer>
 

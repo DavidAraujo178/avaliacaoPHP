@@ -16,7 +16,6 @@ if (mysqli_num_rows($resultado) == 1) {
     $_SESSION['nome'] = $usuario['nome'];
     $_SESSION['tipo'] = $usuario['tipo'];
 
-    // DIRECIONAMENTO POR TIPO
     if ($usuario['tipo'] == 'administrador') {
         header("Location: admin.php");
     } else {

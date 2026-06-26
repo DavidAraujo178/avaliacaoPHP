@@ -32,7 +32,7 @@ $produto = mysqli_fetch_assoc($resultado);
             <input type="text" name="descricao" value="<?php echo $produto['descricao']; ?>" required>
 
             <input type="number" step="0.01" name="preco" value="<?php echo $produto['preco']; ?>" required>
-            
+
             <input type="number" name="quantidade" value="<?php echo $produto['quantidade']; ?>" required>
 
             <button type="submit">Atualizar Produto</button>
@@ -40,7 +40,6 @@ $produto = mysqli_fetch_assoc($resultado);
         </form>
 
     </div>
-
 </body>
 
 </html>
